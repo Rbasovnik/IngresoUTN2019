@@ -13,4 +13,5 @@ function MostrarAumento()
     
     document.getElementById("resultado").value = resultado;
 
+    alert("El aumento es " + (num1 * 0.10));
 }
