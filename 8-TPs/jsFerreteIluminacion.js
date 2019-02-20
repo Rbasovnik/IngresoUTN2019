@@ -23,7 +23,55 @@ function CalcularPrecio ()
     lamparas = parseInt(document.getElementById("Cantidad").value);
     marca = document.getElementById("Marca").value;
 
-    if (lamparas >= 6){
+
+    switch (lamparas){
+        case 0:
+            precio = 0;
+            break;
+        case 1:
+        case 2:
+            descuento = 0;
+            break;
+        case 3:
+            switch (marca){
+                case "ArgentinaLuz":
+                    descuento = precio * 0.15;
+                    break;
+                case "FelipeLamparas":
+                    descuento = precio * 0.10;
+                    break;
+                default:
+                    descuento = precio * 0.05;
+                    break;
+            break;
+            }
+        case 4:
+            switch (marca){
+                case "ArgentinaLuz":
+                case "FelipeLamparas":
+                    descuento = precio * 0.25;
+                    break;
+                default:
+                    descuento = precio *0.20;
+                    break;
+            break;   
+            }
+        case 5:
+            switch (marca){
+                case "ArgentinaLuz":
+                    descuento = precio * 0.40;
+                    break;
+                default:
+                    descuento = precio * 0.30;
+                    break;
+            break;
+            }
+        default:
+            descuento = precio * 0.50;
+            break;
+    }
+/*
+   if (lamparas >= 6){
         descuento = precio * 0.50;
     }
     
@@ -58,7 +106,7 @@ function CalcularPrecio ()
     else {
         decuento = 0;
     }
-
+*/
     precioConDescuento = precio - descuento;
 
     importeFinal = precioConDescuento * lamparas;
