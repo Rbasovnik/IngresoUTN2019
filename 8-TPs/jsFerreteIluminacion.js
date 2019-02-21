@@ -25,50 +25,39 @@ function CalcularPrecio ()
 
 
     switch (lamparas){
-        case 0:
-            precio = 0;
-            break;
         case 1:
         case 2:
             descuento = 0;
             break;
         case 3:
-            switch (marca){
-                case "ArgentinaLuz":
-                    descuento = precio * 0.15;
-                    break;
-                case "FelipeLamparas":
-                    descuento = precio * 0.10;
-                    break;
-                default:
-                    descuento = precio * 0.05;
-                    break;
-            break;
+            if (marca == "ArgentinaLuz"){
+            descuento = precio * 0.15;        
             }
+           else if (marca == "FelipeLamparas") {
+            descuento = precio * 0.10;
+            }
+            else{
+            descuento = precio * 0.05;
+            }
+            break;
         case 4:
-            switch (marca){
-                case "ArgentinaLuz":
-                case "FelipeLamparas":
-                    descuento = precio * 0.25;
-                    break;
-                default:
-                    descuento = precio *0.20;
-                    break;
+            if(marca == "ArgentinaLuz" || marca == "FelipeLamparas"){
+            descuento = precio * 0.25;    
+            }
+            else{
+            descuento = precio * 0.20;
+            }
             break;   
-            }
         case 5:
-            switch (marca){
-                case "ArgentinaLuz":
-                    descuento = precio * 0.40;
-                    break;
-                default:
-                    descuento = precio * 0.30;
-                    break;
-            break;
+            if (marca == "ArgentinaLuz"){
+         descuento = precio * 0.40;   
             }
+            else {
+         descuento = precio * 0.30;
+            }
+            break;
         default:
             descuento = precio * 0.50;
-            break;
     }
 /*
    if (lamparas >= 6){
