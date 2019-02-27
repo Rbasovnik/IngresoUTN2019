@@ -10,6 +10,8 @@ function Mostrar()
 	var positivo=0;
 	var negativo=0;
 	var respuesta;
+//	var promedioPositivo=0;
+//	var promedioNegativo=0;
 
 	do{
 		numero = parseInt(prompt("Ingrese un numero"));
@@ -27,20 +29,35 @@ function Mostrar()
 		else{
 			contadorCeros++;
 		}
-		if (numero % 2){
+		if (numero % 2 == 0){
 			contadorPares++;
 		}
 		contador++;
 		respuesta = confirm("Desea continuar?");
 	}while(respuesta);
 
-	document.write("Suma positivos =" + positivo + "<br>");
-	document.write("Suma negativos =" + negativo + "<br>");
-	document.write("Cantidad de positivos =" + contadorPositivo + "<br>");
-	document.write("Cantidad de negativos =" + contadorNegativo + "<br>");
-	document.write("Cantidad de ceros =" + contadorCeros + "<br>");
-	document.write("Cantidad de numeros pares =" + contadorPares + "<br>");
-	document.write("Promedio de positivos =" + (positivo/contadorPositivo) + "<br>");
-	document.write("Promedio negativos =" + (negativo / contadorNegativo) + "<br>");
-	document.write("Diferencia entre positivos y negativos =" + (positivo - negativo) + "<br>");
+		if (contadorNegativo == 0){
+			contadorNegativo = 1;
+		}
+		if (contadorPositivo == 0){
+			contadorPositivo = 1;
+		}
+		/*if(contadorNegativo != 0){
+			promedioNegativo = negativo / contadorNegativo;
+		}
+		  if(contadorPositivo != 0){
+			promedioPositivo = positivo / contadorPositivo;
+		  }
+		*/
+	document.write("Suma positivos = " + positivo + "<br>");
+	document.write("Suma negativos = " + negativo + "<br>");
+	document.write("Cantidad de positivos = " + contadorPositivo + "<br>");
+	document.write("Cantidad de negativos = " + contadorNegativo + "<br>");
+	document.write("Cantidad de ceros = " + contadorCeros + "<br>");
+	document.write("Cantidad de numeros pares = " + contadorPares + "<br>");
+	document.write("Promedio de positivos = " + (positivo / contadorPositivo) + "<br>");
+//	document.write("Promedio de positivos = " + promedioPositivo + "<br>");
+	document.write("Promedio de negativos = " + (negativo / contadorNegativo) + "<br>");
+//	document.write("Promedio de negativos = " + promedioNegativo + "<br>");
+	document.write("Diferencia entre positivos y negativos = " + (contadorPositivo - contadorNegativo) + "<br>");
 }//FIN DE LA FUNCIÓN
